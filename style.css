@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  font-size: 62.5%;
+  --main--bg: #ffffff;
+  --pSpecial--bg: #e4edf1;
+  --buttonReset-bg: #ff9500;
+  --screen2H2: #34355b;
+}
+body {
+  min-height: 100svh;
+  /* background-size: 200% 200%;*/ 
+  background-image: linear-gradient(
+    31deg,
+    rgba(25, 3, 97, 1) 0%,
+    rgba(187, 0, 255, 1) 100%
+  );
+  animation: bgAnimation 5s linear infinite;
+  display: grid;
+  place-content: center;
+}
+main {
+  background: var(--main--bg);
+  padding: 4.8rem 6.4rem 6.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 42.8rem;
+  border-radius: 0.5rem;
+}
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  text-align: center;
+}
+p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.6rem;
+  margin: 1.4rem 0 2rem;
+  text-align: center;
+}
+#buttonReveal {
+  background-image: url(./assets/fortune-cookie.svg);
+  width: 26rem;
+  height: 20rem;
+  background-color: var(--main--bg);
+  border: none;
+  cursor: pointer;
+}
+#buttonReveal:hover {
+  animation: shake 0.1s infinite;
+}
+.screen2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+#pSpecial {
+  background-color: var(--pSpecial--bg);
+  font-family: "Dancing Script", cursive;
+  font-size: 2.4rem;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 1rem;
+
+  animation: appear 2s forwards;
+}
+form {
+  display: flex;
+  justify-content: center;
+}
+/* img{
+  padding: 4.2rem 0 4.2rem;
+} */
+#buttonReset {
+  font-family: "DM Sans", sans-serif;
+  padding: 1.6rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--main--bg);
+  background-color: var(--buttonReset-bg);
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+}
+#buttonReset:hover {
+  background-color: #cc9020;
+}
+.screen2 h2 {
+  color: var(--screen2H2);
+}
+.hide {
+  display: none;
+}
+@keyframes shake {
+  0% {
+    /* transform: rotate(1deg); */
+    /* transform: translateY(3px); */
+    /* transform: translateX(2px); */
+    transform: translate(3px, 2px);
+  }
+
+  100% {
+    /* transform: translateY(-3px); */
+    /* transform: translateX(-2px); */
+    /* transform: rotate(-1deg); */
+    transform: translate(-3px, -2px);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(15rem) scale(0.1);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bgAnimation {
+  0%{
+    background-image: linear-gradient(
+    45deg,
+    rgba(25, 3, 97, 1) 0%,
+    rgba(187, 0, 255, 1) 100%
+  );
+  }
+  50%{
+    background-image: linear-gradient(
+    90deg,
+    rgba(25, 3, 97, 1) 0%,
+    rgba(187, 0, 255, 1) 100%
+  );
+  }
+  100%{
+    background-image: linear-gradient(
+    45deg,
+    rgba(25, 3, 97, 1) 0%,
+    rgba(187, 0, 255, 1) 100%
+  );
+  }
+  /* }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	} */
+}
